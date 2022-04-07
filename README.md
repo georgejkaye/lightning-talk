@@ -1,8 +1,22 @@
-# Latex template repository
+# lightning-talk
 
-This is a template for making new latex projects.
+* **[Latest release](https://github.com/georgejkaye/lightning-talk/releases/latest)**
+## Setting up
 
-When the new repo is created, a workflow will run that creates
+This project uses *submodules* to share diagrams and things between repos.
+To make sure you have them all pulled, do this to initialise them:
 
-* An empty latex file with the name of the repo and the author addded
-* A new readme containing links to the latest release of the file
+```sh
+git submodule update --init
+```
+
+Occasionally you might want to do this to update the submodules:
+
+```sh
+git submodule foreach git pull origin main
+```
+
+## GitHub Actions
+
+Every time you push a commit starting with `[build]`, it will be compiled and put in a release.
+
